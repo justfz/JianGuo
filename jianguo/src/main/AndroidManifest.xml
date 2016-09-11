@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    package="com.jianguo">
+
+    <application
+        android:name=".Cookie.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/nut_back"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Activity_Start"
+            android:theme="@style/AppSplash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Main.widget.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".news.widget.NewsDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activity_Guide"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Notify.NotifyActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="574a353be0f55a29f3000acf" />
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="624679b6fa3403705e1160a61d599c58" />
+
+        <activity
+            android:name=".OA.View.OfficialActivity"
+            android:label="@string/title_activity_official"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OA.View.Notice_InformationActivity"
+            android:label="@string/title_activity_notice__information"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".common.URLActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
+
+</manifest>

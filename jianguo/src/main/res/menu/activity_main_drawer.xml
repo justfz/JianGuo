@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:icon="@drawable/news"
+            android:id="@+id/nav_NewsList"
+            android:title="资讯" />
+        <item
+            android:icon="@drawable/jiaowu"
+            android:id="@+id/nav_jiaowu"
+            android:title="教务" />
+        <item
+            android:icon="@drawable/oa"
+            android:id="@+id/nav_oa"
+            android:title="OA" />
+        <item
+            android:icon="@drawable/community"
+            android:id="@+id/nav_community"
+            android:title="论坛"
+            />
+    </group>
+
+    <item android:title="About">
+        <menu>
+            <item
+                android:icon="@drawable/denglu"
+                android:id="@+id/nav_login"
+                android:title="登录" />
+            <item
+                android:icon="@drawable/tuichu"
+                android:id="@+id/nav_quit"
+                android:title="注销"
+                />
+            <item
+                android:icon="@drawable/about"
+                android:id="@+id/nav_about"
+                android:title="关于" />
+        </menu>
+    </item>
+
+</menu>

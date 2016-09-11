@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    >
+    <TextView
+        android:id="@+id/guide_text_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="快速查看课表"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/guide_img_2"
+        android:layout_margin="30dp"
+        />
+    <ImageView
+        android:id="@+id/guide_img_2"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/guide_1"
+        />
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_margin="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/guide_img_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="地点，时间，人物\n一个都不少"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        />
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/relativeLayout">
+        <LinearLayout
+            android:id="@+id/points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+        />
+        <View
+
+            android:id="@+id/point"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:background="@drawable/shape_point_red" />
+    </RelativeLayout>
+    <Button
+        android:visibility="invisible"
+        android:layout_alignParentBottom="true"
+        android:text="立即进入"
+        android:id="@+id/enter"
+        android:textColor="@drawable/btn_guide_text_color"
+        android:background="@drawable/btn_bg"
+        android:layout_marginLeft="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
