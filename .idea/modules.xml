@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PushSDK/PushSDK.iml" filepath="$PROJECT_DIR$/PushSDK/PushSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/jgjiaowu.iml" filepath="$PROJECT_DIR$/jgjiaowu.iml" />
       <module fileurl="file://$PROJECT_DIR$/jianguo/jianguo.iml" filepath="$PROJECT_DIR$/jianguo/jianguo.iml" />
     </modules>

@@ -20,6 +20,7 @@
         android:layout_centerVertical="true"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:src="@drawable/guide_1"
         />
     <TextView
         android:gravity="center_horizontal"
