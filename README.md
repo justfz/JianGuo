@@ -3,7 +3,13 @@
 # 截图
 
 # 说明
-
+![guide_1](https://github.com/justfz/JianGuo/blob/master/img/guide_1.png)
+![guide_2](https://github.com/justfz/JianGuo/blob/master/img/guide_2.png)
+![guide_3](https://github.com/justfz/JianGuo/blob/master/img/guide_3.png)
+![guide_4](https://github.com/justfz/JianGuo/blob/master/img/Screenshot_20161126-193136.png)
+![guide_5](https://github.com/justfz/JianGuo/blob/master/img/Screenshot_20161126-193125.png)
+![guide_6](https://github.com/justfz/JianGuo/blob/master/img/Screenshot_1480081105.png)
+![guide_7](https://github.com/justfz/JianGuo/blob/master/img/Screenshot_1480081074.png)
 - 江西经济管理干部学院校园APP
 - 架构：MVP
 - 图片加载：Picasso
