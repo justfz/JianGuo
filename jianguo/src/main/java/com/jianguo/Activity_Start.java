@@ -11,8 +11,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 
 import com.jianguo.Main.widget.MainActivity;
-import com.umeng.message.PushAgent;
-import com.umeng.message.UmengRegistrar;
+
 
 
 /**
@@ -29,9 +28,9 @@ public class Activity_Start extends AppCompatActivity {
         Animation animation=new AlphaAnimation(0.3f,1f);
         animation.setDuration(3000);
         animation.setFillAfter(true);
-        PushAgent.getInstance(getApplicationContext()).onAppStart();
-        PushAgent mPushAgent = PushAgent.getInstance(getApplicationContext());
-        mPushAgent.enable();
+        //PushAgent.getInstance(getApplicationContext()).onAppStart();
+        //PushAgent mPushAgent = PushAgent.getInstance(getApplicationContext());
+        //mPushAgent.enable();
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
         animation.setAnimationListener(new Animation.AnimationListener() {
             @Override

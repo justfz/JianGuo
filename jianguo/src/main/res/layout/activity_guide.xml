@@ -22,7 +22,6 @@
             android:orientation="horizontal"
         />
         <View
-
             android:id="@+id/point"
             android:layout_width="16dp"
             android:layout_height="16dp"

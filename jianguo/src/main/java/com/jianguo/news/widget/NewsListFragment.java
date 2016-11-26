@@ -78,6 +78,7 @@ public class NewsListFragment extends Fragment implements NewsView, SwipeRefresh
     @Nullable
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        getActivity().setTitle("资讯");
         View view = inflater.inflate(R.layout.fragment_newslist, null);
         refreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh_widget);
         refreshLayout.setColorSchemeResources(R.color.primary,
@@ -130,7 +131,8 @@ public class NewsListFragment extends Fragment implements NewsView, SwipeRefresh
         if (list!=null)
             list.clear();
         mNewsPresenter.loadView();
-        mNewsPresenter.loadAdvertisement();
+        //加载图片轮播
+        //mNewsPresenter.loadAdvertisement();
     }
 
 

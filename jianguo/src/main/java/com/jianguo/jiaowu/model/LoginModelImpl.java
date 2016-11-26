@@ -45,7 +45,10 @@ public class LoginModelImpl implements LoginModel {
     }
     @Override
     public void getParameter(final LoginView loginView) {
-        Request request = OKHttpUtils.getRequest(OKHttpUtils.getParameter());
+        Request request=new Request.Builder()
+            .url(Common.LOGIN_URL)
+            .addHeader("HOST","newjwglxt.jiea.cn")
+            .build();
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {

@@ -20,17 +20,16 @@
         android:layout_centerVertical="true"
         android:layout_width="match_parent"
         android:layout_height="300sp"
-        android:src="@drawable/guide_3"
         />
-    <TextView
-        android:gravity="center_horizontal"
-        android:layout_margin="30dp"
-        android:layout_below="@+id/guide_three_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textColor="#fff"
-        android:text="仅有的掌上OA"
-        android:layout_centerHorizontal="true"
-        />
+    <!--<TextView-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:layout_margin="30dp"-->
+        <!--android:layout_below="@+id/guide_three_2"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="20sp"-->
+        <!--android:textColor="#fff"-->
+        <!--android:text="仅有的掌上OA"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--/>-->
 </RelativeLayout>

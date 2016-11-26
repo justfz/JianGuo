@@ -79,7 +79,6 @@ public class ADNavigation extends FrameLayout {
 
     private void initLayout() {
         imageViews.clear();
-
         View view = LayoutInflater.from(context).inflate(
                 R.layout.item_advertisement, this, true);
         vp = (ViewPager) view.findViewById(R.id.vp);

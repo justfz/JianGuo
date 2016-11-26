@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jianguo.Cookie.OKHttpUtils;
@@ -51,12 +52,14 @@ public class OA_LoginFragment extends Fragment implements OA_LoginView, View.OnC
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragement_oa_login, null);
-        oa_edit_teacher_id = (EditText) view.findViewById(R.id.oa_edit_teacher_id);
-        oa_edit_teacher_pass = (EditText) view.findViewById(R.id.oa_edit_teacher_pass);
-        oa_edit_teacher_checkcode = (EditText) view.findViewById(R.id.oa_edit_checkcode);
-        oa_button_login= (Button) view.findViewById(R.id.oa_bt_login);
-        oa_image = (ImageView) view.findViewById(R.id.oa_image_checkcode);
+        View view = inflater.inflate(R.layout.fragment_login, null);
+        oa_edit_teacher_id = (EditText) view.findViewById(R.id.edit_number_id);
+        oa_edit_teacher_pass = (EditText) view.findViewById(R.id.edit_pass_id);
+        oa_edit_teacher_checkcode = (EditText) view.findViewById(R.id.edit_checkcode);
+        oa_button_login= (Button) view.findViewById(R.id.bt_login);
+        oa_image = (ImageView) view.findViewById(R.id.image_checkcode);
+        view.findViewById(R.id.login_help_id).setVisibility(View.GONE);
+        view.findViewById(R.id.login_help_pass).setVisibility(View.GONE);
         OKHttpUtils.clearCookie_oa();
         oa_loginPresenter.loadParameterView();
         oa_button_login.setOnClickListener(this);
@@ -99,7 +102,7 @@ public class OA_LoginFragment extends Fragment implements OA_LoginView, View.OnC
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.oa_bt_login:
+            case R.id.bt_login:
                 progressDialog = new ProgressDialog(getContext());
                 progressDialog.setMessage("正在登录...");
                 progressDialog.show();
@@ -108,7 +111,7 @@ public class OA_LoginFragment extends Fragment implements OA_LoginView, View.OnC
                 checkcode=oa_edit_teacher_checkcode.getText().toString();
                 oa_loginPresenter.Loginevent(teacher_id,teacher_pass,checkcode);
                 break;
-            case R.id.oa_image_checkcode:
+            case R.id.image_checkcode:
                 oa_loginPresenter.loadParameterView();
                 break;
         }

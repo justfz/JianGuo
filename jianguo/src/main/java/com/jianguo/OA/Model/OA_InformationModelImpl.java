@@ -2,7 +2,7 @@ package com.jianguo.OA.Model;
 
 import com.jianguo.Cookie.OKHttpUtils;
 import com.jianguo.OA.OAUtils;
-import com.jianguo.OA.View.OA_InformationView;
+import com.jianguo.OA.View.OA_Common_View;
 import com.jianguo.beans.NewsBean;
 import com.jianguo.common.Common;
 
@@ -19,7 +19,7 @@ import okhttp3.Response;
  */
 public class OA_InformationModelImpl implements OA_InforamtionModel {
     @Override
-    public void getInformation(final OA_InformationView oa_informationView) {
+    public void getInformation(final OA_Common_View oa_informationView) {
         if (OAUtils.content==null){
             Request request=new Request.Builder()
                     .url(Common.OA_OFFICIAL_URL)
@@ -34,12 +34,12 @@ public class OA_InformationModelImpl implements OA_InforamtionModel {
                 public void onResponse(Call call, Response response) throws IOException {
                     OAUtils.content = response.body().string();
                     List<NewsBean> list = OAUtils.readingInformation();
-                    oa_informationView.setInformation(list);
+                    oa_informationView.setDataBean(list);
                 }
             });
         }else {
             List<NewsBean> list = OAUtils.readingInformation();
-            oa_informationView.setInformation(list);
+            oa_informationView.setDataBean(list);
         }
     }
 }

@@ -22,10 +22,10 @@ import java.util.List;
 /**
  * Created by ifane on 2016/8/27 0027.
  */
-public class OAFragment_notice extends Fragment implements OA_NoticeView, OA_RecycleViewAdapter_notice.OnItemClickListener {
+public class OAFragment_notice extends Fragment implements OA_Common_View, OA_RecycleViewAdapter.OnItemClickListener {
 
     private RecyclerView notice_recy;
-    private OA_RecycleViewAdapter_notice oa_recycleViewAdapter_notice;
+    private OA_RecycleViewAdapter oa_recycleViewAdapter_notice;
     private OA_NoticePresenter oa_noticePresenter;
     private List<NewsBean> data;
 
@@ -38,19 +38,19 @@ public class OAFragment_notice extends Fragment implements OA_NoticeView, OA_Rec
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_oa_notice, null);
-        notice_recy = (RecyclerView) view.findViewById(R.id.oa_notice_recy);
+        View view = inflater.inflate(R.layout.fragment_oa_list, null);
+        notice_recy = (RecyclerView) view.findViewById(R.id.oa_recy);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         notice_recy.setLayoutManager(linearLayoutManager);
         notice_recy.setItemAnimator(new DefaultItemAnimator());
-        oa_recycleViewAdapter_notice = new OA_RecycleViewAdapter_notice(getContext());
+        oa_recycleViewAdapter_notice = new OA_RecycleViewAdapter(getContext());
         oa_recycleViewAdapter_notice.setOnItemClickListener(this);
         oa_noticePresenter.loadNotice();
         return view;
     }
 
     @Override
-    public void setNotice(final List<NewsBean> list) {
+    public void setDataBean(final List<NewsBean> list) {
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {

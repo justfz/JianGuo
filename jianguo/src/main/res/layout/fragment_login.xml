@@ -28,8 +28,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
-                android:id="@+id/edit_student_id"
-                android:hint="学号"
+                android:id="@+id/edit_number_id"
+                android:hint="@string/login_user"
                 android:inputType="number"
                 android:maxLines="1"
                 android:singleLine="true"
@@ -41,8 +41,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
-                android:id="@+id/edit_student_pass"
-                android:hint="密码"
+                android:id="@+id/edit_pass_id"
+                android:hint="@string/login_pass"
                 android:maxLines="1"
                 android:singleLine="true"
                 android:inputType="textPassword"
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content">
             <EditText
                 android:id="@+id/edit_checkcode"
-                android:hint="验证码"
+                android:hint="@string/login_checkcode"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />

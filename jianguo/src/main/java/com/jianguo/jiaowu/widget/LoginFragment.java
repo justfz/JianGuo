@@ -68,8 +68,8 @@ public class LoginFragment extends Fragment implements LoginView {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, null);
-        edit_student_id = (EditText) view.findViewById(R.id.edit_student_id);
-        edit_student_pass = (EditText) view.findViewById(R.id.edit_student_pass);
+        edit_student_id = (EditText) view.findViewById(R.id.edit_number_id);
+        edit_student_pass = (EditText) view.findViewById(R.id.edit_pass_id);
         edit_checkcode = (EditText) view.findViewById(R.id.edit_checkcode);
         image_checkcode = (ImageView) view.findViewById(R.id.image_checkcode);
         bt_login = (Button) view.findViewById(R.id.bt_login);

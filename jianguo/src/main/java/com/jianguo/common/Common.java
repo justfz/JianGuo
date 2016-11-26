@@ -18,5 +18,5 @@ public class Common {
     public static final String OA_OFFICIAL_URL="http://oa.jiea.cn:8003/Office/index/userPubDesktop.action";
     public static final String OA_ZHUYE="http://oa.jiea.cn:8003";
     public static final String HTML_ADAPTER="<body width=320px style=\\\"word-wrap:break-word; font-family:Arial\\\">";
-    public static final String AD = "http://blog.zfane.cn/Advertisement.json";
+    public static final String AD = "http://blog.zfane.cn/usr/uploads/2016/09/2247130964.json";
 }

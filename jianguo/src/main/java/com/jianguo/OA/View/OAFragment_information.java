@@ -22,10 +22,10 @@ import java.util.List;
 /**
  * Created by ifane on 2016/8/27 0027.
  */
-public class OAFragment_information  extends Fragment implements OA_InformationView, OA_RecycleViewAdapter_Information.OnItemClickListener {
+public class OAFragment_information  extends Fragment implements OA_Common_View, OA_RecycleViewAdapter.OnItemClickListener {
 
     private RecyclerView information_recy;
-    private OA_RecycleViewAdapter_Information oa_recycleViewAdapter_information;
+    private OA_RecycleViewAdapter oa_recycleViewAdapter_information;
     private OA_InformationPresenter oa_informationPresenter;
     private List<NewsBean> data;
 
@@ -38,19 +38,19 @@ public class OAFragment_information  extends Fragment implements OA_InformationV
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_oa_information, null);
-        information_recy = (RecyclerView) view.findViewById(R.id.oa_information_recy);
+        View view = inflater.inflate(R.layout.fragment_oa_list, null);
+        information_recy = (RecyclerView) view.findViewById(R.id.oa_recy);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         information_recy.setLayoutManager(linearLayoutManager);
         information_recy.setItemAnimator(new DefaultItemAnimator());
-        oa_recycleViewAdapter_information = new OA_RecycleViewAdapter_Information(getContext());
+        oa_recycleViewAdapter_information = new OA_RecycleViewAdapter(getContext());
         oa_recycleViewAdapter_information.setOnItemClickListener(this);
         oa_informationPresenter.loadInformation();
         return view;
     }
 
     @Override
-    public void setInformation(final List<NewsBean> list) {
+    public void setDataBean(final List<NewsBean> list) {
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {

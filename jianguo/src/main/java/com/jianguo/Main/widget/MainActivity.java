@@ -38,8 +38,7 @@ import com.jianguo.jiaowu.JWUtils;
 import com.jianguo.jiaowu.widget.JWFragment;
 import com.jianguo.jiaowu.widget.LoginFragment;
 import com.jianguo.news.widget.NewsListFragment;
-import com.umeng.message.PushAgent;
-import com.umeng.message.proguard.m;
+
 
 
 public class MainActivity extends AppCompatActivity
@@ -94,7 +93,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
         mainPresenter = new MainPresenterImpl(this);
-        PushAgent.getInstance(getApplicationContext()).onAppStart();
+        //PushAgent.getInstance(getApplicationContext()).onAppStart();
         onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_NewsList));
     }
 

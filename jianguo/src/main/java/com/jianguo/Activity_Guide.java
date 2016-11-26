@@ -1,6 +1,8 @@
 package com.jianguo;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
@@ -14,11 +16,11 @@ import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.jianguo.Main.widget.MainActivity;
-import com.umeng.message.PushAgent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,8 +30,9 @@ import java.util.List;
  * Created by ifane on 2016/6/12 0012.
  */
 public class Activity_Guide extends AppCompatActivity {
-    private static final int[] mImageIds = new int[]{R.layout.guide_one,
+    private static final int[] mLayoutIds = new int[]{R.layout.guide_one,
             R.layout.guide_two, R.layout.guide_three};
+    private static final int[] mImgs=new int[]{R.drawable.guide_1,R.drawable.guide_2,R.drawable.guide_3};
     private MyAdapter myAdapter;
     private ViewPager vp;
     private LinearLayout points;
@@ -58,7 +61,7 @@ public class Activity_Guide extends AppCompatActivity {
                 finish();
             }
         });
-        PushAgent.getInstance(getApplicationContext()).onAppStart();
+        //PushAgent.getInstance(getApplicationContext()).onAppStart();
         animation = new AlphaAnimation(0,1);
         animation.setDuration(1500);
         myAdapter = new MyAdapter();
@@ -79,7 +82,7 @@ public class Activity_Guide extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                if (position==mImageIds.length-1){
+                if (position==mLayoutIds.length-1){
                     relativeLayout.setVisibility(View.GONE);
                     enter.setVisibility(View.VISIBLE);
                     enter.setAnimation(animation);
@@ -97,12 +100,23 @@ public class Activity_Guide extends AppCompatActivity {
     }
     private void initView() {
         //初始化引导页图片
-        for (int i = 0; i < mImageIds.length; i++) {
-            View view = View.inflate(this,mImageIds[i], null);
-            myAdapter.addGuide(view);
-        }
+        View guideView_1 = View.inflate(this,mLayoutIds[0], null);
+        ImageView imageView_1= (ImageView) guideView_1.findViewById(R.id.guide_one_2);
+        imageView_1.setImageBitmap(compressImg(mImgs[0]));
+        myAdapter.addGuide(guideView_1);
+
+        View guideView_2 = View.inflate(this,mLayoutIds[1], null);
+        ImageView imageView_2= (ImageView) guideView_2.findViewById(R.id.guide_two_2);
+        imageView_2.setImageBitmap(compressImg(mImgs[1]));
+        myAdapter.addGuide(guideView_2);
+
+        View guideView_3 = View.inflate(this,mLayoutIds[2], null);
+        ImageView imageView_3= (ImageView) guideView_3.findViewById(R.id.guide_three_2);
+        imageView_3.setImageBitmap(compressImg(mImgs[2]));
+        myAdapter.addGuide(guideView_3);
+
         //初始化引导页小圆点
-        for (int i = 0; i < mImageIds.length; i++) {
+        for (int i = 0; i < mLayoutIds.length; i++) {
             View view = new View(this);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(16, 16);
             view.setBackgroundResource(R.drawable.shape_point_gray);
@@ -120,7 +134,12 @@ public class Activity_Guide extends AppCompatActivity {
             }
         });
     }
-
+    private Bitmap compressImg(int layoutId){
+        BitmapFactory.Options options=new BitmapFactory.Options();
+        options.inSampleSize=2;
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), layoutId, options);
+        return bitmap;
+    }
     public class MyAdapter extends PagerAdapter {
         private List<View> guide = new ArrayList<View>();
 

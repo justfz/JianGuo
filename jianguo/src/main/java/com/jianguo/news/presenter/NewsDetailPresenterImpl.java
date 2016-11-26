@@ -19,4 +19,5 @@ public class NewsDetailPresenterImpl implements NewsDetailPresenter {
     public void loadDetailView(String url) {
         mNewsModel.loadNews(url,mNewsDeatil);
     }
+
 }

@@ -4,6 +4,7 @@ import com.jianguo.Cookie.OKHttpUtils;
 import com.jianguo.OA.Model.OA_LoginModel;
 import com.jianguo.OA.Model.OA_LoginModelImpl;
 import com.jianguo.OA.View.OA_LoginView;
+import com.jianguo.common.Common;
 
 /**
  * Created by ifane on 2016/8/26 0026.
@@ -20,7 +21,7 @@ public class OA_LoginPresenterImpl implements OA_LoginPresenter {
 
     @Override
     public void loadParameterView() {
-        oa_loginModel.getParameter(oaLoginView, OKHttpUtils.getParameter_oa());
+        oa_loginModel.getParameter(oaLoginView, Common.OA_CHECKCODE);
     }
 
     @Override

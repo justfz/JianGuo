@@ -28,7 +28,7 @@ public class NewsUtils {
         for (int i=0;i<select.size();i++){
             NewsBean news=new NewsBean();
             //得到标题
-            news.setNews_title(select.get(i).select("a").text());
+            news.setNews_title(select.get(i).select("a").attr("title"));
             //得到网址
             news.setHref(Common.NewsList_zhuye+"/"+select.get(i).select("a").attr("href"));
             //得到日期
@@ -45,7 +45,10 @@ public class NewsUtils {
         }
         return list;
     }
-
+    public static  String readingNewsDate(String content){
+        String NewsDate=Jsoup.parse(content).getElementsByClass("amsg").text();
+        return NewsDate;
+    }
     public static String readingNewsDetail(String content){
         String Content_Title= Jsoup.parse(content).select("h1.atit").text();
         Element content_tmp = Jsoup.parse(content).getElementById("content");
@@ -53,7 +56,12 @@ public class NewsUtils {
             return "对不起，找不到新闻（非标准的新闻格式）";
         String web_conten=content_tmp.toString();
         web_conten = web_conten.replace("src=\"","src=\"http://www.jiea.cn");
-        web_conten = web_conten.concat("<style>img{max-width: 100%;height:50vw;}</style>");
+        web_conten = web_conten.concat("<style>\n" +
+                "img{max-width: 100%;height:50vw;}\n" +
+                "*{\n" +
+                "\tfont:10px/1.5 Microsoft YaHei,\"微软雅黑\", Arial, Helvetica, sans-serif;word-wrap:break-word;color:#333;\n" +
+                "}\n" +
+                "</style>");
         return  web_conten;
     }
     public static Bitmap readingNewsImage(String content){

@@ -72,11 +72,13 @@ public class NewsModelImpl implements NewsModel {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String content = response.body().string();
+                String newsDate=NewsUtils.readingNewsDate(content);
                 String detail = NewsUtils.readingNewsDetail(content);
                 Bitmap bitmap = NewsUtils.readingNewsImage(content);
                 if (bitmap != null) {
                     newsDeatil.addNewsDetailImage(bitmap);
                 }
+                newsDeatil.addNewsDate(newsDate);
                 newsDeatil.addNewsDetailContent(detail);
             }
         });
